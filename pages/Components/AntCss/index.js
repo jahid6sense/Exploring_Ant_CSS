@@ -3,6 +3,17 @@ import React from 'react';
 import { PoweroffOutlined } from '@ant-design/icons';
 import { SearchOutlined } from '@ant-design/icons';
 import { DownloadOutlined } from '@ant-design/icons';
+import {
+    HomeOutlined,
+    SettingFilled,
+    SmileOutlined,
+    SyncOutlined,
+    TrophyTwoTone,
+    PlayCircleOutlined,
+    LoadingOutlined,
+    PlusCircleTwoTone,
+    PlayCircleFilled
+} from '@ant-design/icons';
 
 
 
@@ -88,6 +99,18 @@ const index = () => {
                     Dashed
                 </Button>
             </div>
+
+            <div className="icons-list">
+                <HomeOutlined />
+                <SyncOutlined spin />
+                <SmileOutlined rotate={180} />
+                <LoadingOutlined />
+
+                <PlusCircleTwoTone />
+                <PlayCircleOutlined />
+                <TrophyTwoTone />
+                <PlayCircleFilled />
+            </div>,
 
         </>
     );
