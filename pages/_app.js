@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-// import '../pages/Components/AntCss/Custom.less';
+import '../pages/Components/AntCss/custom.css';
 
 
 function MyApp({ Component, pageProps }) {
