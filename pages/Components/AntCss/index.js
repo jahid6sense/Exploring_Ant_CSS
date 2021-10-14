@@ -1,8 +1,13 @@
 import { Button, Space, Tooltip } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
 import { PoweroffOutlined } from '@ant-design/icons';
 import { SearchOutlined } from '@ant-design/icons';
 import { DownloadOutlined } from '@ant-design/icons';
+import { Typography } from 'antd';
+import { Switch } from 'antd';
+const { Paragraph, Text } = Typography;
+
+const { Title } = Typography;
 import {
     HomeOutlined,
     SettingFilled,
@@ -18,36 +23,10 @@ import {
 
 
 
-const index = () => {
+const Index = () => {
 
-    ////////////////Button/////////////////////////
-    // const state = {
-    //     loadings: [],
-    // };
+    const [ellipsis, setEllipsis] = useState(true);
 
-    // enterLoading = index => {
-    //     this.setState(({ loadings }) => {
-    //         const newLoadings = [...loadings];
-    //         newLoadings[index] = true;
-
-    //         return {
-    //             loadings: newLoadings,
-    //         };
-    //     });
-    //     setTimeout(() => {
-    //         this.setState(({ loadings }) => {
-    //             const newLoadings = [...loadings];
-    //             newLoadings[index] = false;
-
-    //             return {
-    //                 loadings: newLoadings,
-    //             };
-    //         });
-    //     }, 6000);
-    // };
-
-
-    // const { loadings } = this.state;
 
     return (
         <>
@@ -112,8 +91,44 @@ const index = () => {
                 <PlayCircleFilled />
             </div>,
 
+            <Title level={2}>Hi there</Title>
+
+            <div>
+                <Title>h1. Ant Design</Title>
+                <Title level={2}>h2. Ant Design</Title>
+                <Title level={3}>h3. Ant Design</Title>
+                <Title level={4}>h4. Ant Design</Title>
+                {/* <Title level={5}>h5. Ant Design</Title> */}
+            </div>
+
+
+            <div>
+                <Switch
+                    checked={ellipsis}
+                    onChange={() => {
+                        setEllipsis(!ellipsis);
+                    }}
+                />
+
+                {/* <Paragraph ellipsis={ellipsis}>
+                    lorem ipsum dolor sit amet, consectetur adip Ant Design, a design language for background applications, is refined by Ant UED Team.
+                </Paragraph> 
+
+                <Paragraph ellipsis={ellipsis ? { rows: 2, expandable: true, symbol: 'more' } : false}>
+                    lorem 123456789
+                </Paragraph>
+
+                <Text
+                    style={ellipsis ? { width: 100 } : undefined}
+                    ellipsis={ellipsis ? { tooltip: 'I am ellipsis now!' } : false}
+                >
+                    Ant Design, a design language for background applications, is refined by Ant UED Team.
+                </Text> */}
+
+            </div>
+
         </>
     );
 };
 
-export default index;
+export default Index;
