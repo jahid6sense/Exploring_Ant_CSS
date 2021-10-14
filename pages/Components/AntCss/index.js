@@ -1,6 +1,8 @@
-import { Button, Space } from 'antd';
+import { Button, Space, Tooltip } from 'antd';
 import React from 'react';
 import { PoweroffOutlined } from '@ant-design/icons';
+import { SearchOutlined } from '@ant-design/icons';
+import { DownloadOutlined } from '@ant-design/icons';
 
 
 
@@ -56,12 +58,35 @@ const index = () => {
                 </Button>
             </div>
 
-
-            {/* Loading Button */}
+            {/* Search Button */}
             <div>
+                <Tooltip title="search">
+                    <Button shape="circle" icon={<SearchOutlined />} size="large" />
+                </Tooltip>
+                <Tooltip title="search here">
+                    <Button type="primary" shape="circle" icon={<SearchOutlined />} size="large" />
+                </Tooltip>
             </div>
 
-            
+            {/* Download Button */}
+            <div>
+                <br />
+                <Button type="link">
+                    Link
+                </Button>
+
+                <Button type="primary" shape="round" icon={<DownloadOutlined />} />
+            </div>
+
+            <div className="site-button-ghost-wrapper">
+                <Button type="primary" ghost>
+                    Primary
+                </Button>
+                <Button ghost>Default</Button>
+                <Button type="dashed" ghost>
+                    Dashed
+                </Button>
+            </div>
 
         </>
     );
