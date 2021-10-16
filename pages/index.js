@@ -1,110 +1,85 @@
-import 'antd/dist/antd.css';
-import Index from './Components/AntCss/index';
-import AntCss from './Components/AntCss/index'
-import { Button, Space, Tooltip } from 'antd';
-import React, { useState } from 'react';
-import { PoweroffOutlined } from '@ant-design/icons';
-import { SearchOutlined } from '@ant-design/icons';
-import { DownloadOutlined } from '@ant-design/icons';
+// import 'antd/dist/antd.css'; 
+import { Button, Col, Divider, Row, Space, Tooltip } from 'antd';
+import React, { useEffect, useState } from 'react';
 import { Typography } from 'antd';
-import { Switch } from 'antd';
-const { Paragraph, Text } = Typography;
+import { Layout, Menu, Breadcrumb } from 'antd';
+import Slider from '@ant-design/react-slick';
+import { useRouter } from 'next/dist/client/router';
 
-const { Title } = Typography;
-import {
-  HomeOutlined,
-  SettingFilled,
-  SmileOutlined,
-  SyncOutlined,
-  TrophyTwoTone,
-  PlayCircleOutlined,
-  LoadingOutlined,
-  PlusCircleTwoTone,
-  PlayCircleFilled
-} from '@ant-design/icons';
+const { Header, Content } = Layout;
 
 
 
 
 export default function Home() {
 
+  const [size, setSize] = useState(8);
 
-  
+  const router = useRouter()
+  // const { page } = router.query
+
+  const handleClick = (component) => {
+    router.push(`/${component}`);
+  }
+
+  // const [product, setProduct] = useState([]);
+
+  // useEffect(() => {
+  //   fetch(`https://app.firstbase.io/company/OR242941/rewards`)
+  //     .then(res => res.json())
+  //     .then(data => setProduct(data))
+  // }, [])
+  // console.log(product);
+
+
+
   return (
-    <div className="">
-      <h1 className="">Exploring Ant Css</h1>
-      <>
+    <div className="ph-30 pv-30">
+      <h1 className="text-center underline">Exploring Ant Design</h1>
 
-        {/* Normal button */}
-        <div>
-          <Button type="primary" danger>
-            Primary
-          </Button>
-          <Button danger>Default</Button>
-          <Button type="dashed" danger>
-            Dashed
-          </Button>
-          <Button type="text" danger>
-            Text
-          </Button>
-          <Button type="link" danger>
-            Link
-          </Button>
-        </div>
-
-        {/* Search Button */}
-        <div>
-          <Tooltip title="search">
-            <Button shape="circle" icon={<SearchOutlined />} size="large" />
-          </Tooltip>
-          <Tooltip title="search here">
-            <Button type="primary" shape="circle" icon={<SearchOutlined />} size="large" />
-          </Tooltip>
-        </div>
-
-        {/* Download Button */}
-        <div>
-          <br />
-          <Button type="link">
-            Link
-          </Button>
+      <Layout className="layout">
+        <h1 className="text-center">Session: 01</h1>
+        <Header>
+          <div className="logo" />
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['0']}>
+            {new Array(15).fill(null).map((_, index) => {
+              const key = index + 1;
+              const sense = ["", "button", "icon", "typography", "divider", "grid", "layout", "space", "affix", "breadcrumb", "dropdown", "menu", "pageHeader", "pagination", "steps"]
+              return <Menu.Item
+                onClick={() => handleClick(sense[key])}
+                key={key}
+              >
+                {sense[key]}
+              </Menu.Item>;
+            })}
+          </Menu>
+        </Header>
 
 
-          <Button type="primary" shape="round" icon={<DownloadOutlined />} />
-        </div>
-
-        <div className="site-button-ghost-wrapper">
-          <Button type="primary" ghost>
-            Primary
-          </Button>
-          <Button ghost>Default</Button>
-          <Button type="dashed" ghost>
-            Dashed
-          </Button>
-        </div>
-
-        <div className="icons-list">
-          <HomeOutlined />
-          <SyncOutlined spin />
-          <SmileOutlined rotate={180} />
-          <LoadingOutlined />
-
-          <PlusCircleTwoTone />
-          <PlayCircleOutlined />
-          <TrophyTwoTone />
-          <PlayCircleFilled />
-        </div>,
-
-        <Title level={2}>Hi there</Title>
-
-        <div>
-          <Title>h1. Ant Design</Title>
-          <Title level={2}>h2. Ant Design</Title>
-          <Title level={3}>h3. Ant Design</Title>
-          <Title level={4}>h4. Ant Design</Title>
-          {/* <Title level={5}>h5. Ant Design</Title> */}
-        </div>
-      </>
+        <br />
+        <h1 className="text-center">Session: 02</h1>
+        <Header>
+          <div className="logo" />
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['0']}>
+            {new Array(15).fill(null).map((_, index) => {
+              const key = index + 1;
+              const sense = ["", "autoComplete", "cascader", "checkbox", "datepicker", "form", "input", "inputNumber", "mention", "radio", "rate", "select", "slider", "switch", "timePicker", "transfer", "treeSelect", "upload"]
+              return <Menu.Item
+                onClick={() => handleClick(sense[key])}
+                key={key}
+              >
+                {sense[key]}
+              </Menu.Item>;
+            })}
+          </Menu>
+        </Header>
+        {/* <Content style={{ padding: '0 50px' }}>
+          <Breadcrumb style={{ margin: '16px 0' }}>
+            <Breadcrumb.Item>{page}</Breadcrumb.Item>
+          </Breadcrumb>
+          <div className="site-layout-content">Exploring Ant Css</div>
+        </Content> */}
+      </Layout>
     </div>
   )
 }
