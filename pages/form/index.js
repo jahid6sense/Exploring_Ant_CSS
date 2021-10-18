@@ -102,7 +102,7 @@ const Index = () => {
 
                 <Form.Item label="Error" hasFeedback validateStatus="error">
                     <Select allowClear>
-                        <Option value="1">Asim</Option>
+                        <Option value="1">Aasim</Option>
                         <Option value="2">Bivor</Option>
                         <Option value="3">Jahid</Option>
                     </Select>
