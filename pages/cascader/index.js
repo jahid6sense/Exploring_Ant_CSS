@@ -7,8 +7,8 @@ const index = () => {
 
     const options = [
         {
-            value: 'Aasim',
-            label: 'Aasim',
+            value: 'Asim',
+            label: 'Asim',
             children: [
                 {
                     value: 'Bivor',

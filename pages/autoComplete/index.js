@@ -44,7 +44,7 @@ const Index = () => {
     const options = [
         {
             label: renderTitle('Director'),
-            options: [renderItem('Aasim', 111), renderItem('AntDesign UI', 1010)],
+            options: [renderItem('Asim', 111), renderItem('AntDesign UI', 1010)],
         },
         {
             label: renderTitle('Team Lead'),
